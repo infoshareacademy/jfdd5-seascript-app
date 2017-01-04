@@ -2,7 +2,9 @@
 
 
 html,body {
-  background: rgba(0,123,180,1);
+  /*background: rgba(0,123,180,1);*/
+  background: #fff;
   padding-top: 70px;
   font-family: 'Roboto', sans-serif;
+  color: #006a9a;
 }

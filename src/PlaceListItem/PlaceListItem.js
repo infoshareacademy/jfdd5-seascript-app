@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router'
 import {Button} from 'react-bootstrap'
 import {Grid, Col, Well, Clearfix} from 'react-bootstrap'
-import {places, attractions} from '../Database'
+import {places, attractions, additionals} from '../Database'
 import {connect} from 'react-redux'
 
 const mapStateToProps = state => ({
@@ -15,7 +15,12 @@ const mapDispatchToProps = dispatch => ({
   addAttractionAndPlaceToCompare: (attraction, place) => dispatch({
     type: 'ADD_ATTRACTION_AND_PLACE_TO_COMPARE',
     attraction: attraction,
-    place: place
+    place: place,
+    additional: additionals.find(
+      additional => (
+        additional.placeId === place.id &&
+        additional.attractionId === attraction.id
+      ))
   }),
   removeAttractionAndPlaceFromCompare: (attraction, place) => dispatch({
     type: 'REMOVE_ATTRACTION_AND_PLACE_FROM_COMPARE',

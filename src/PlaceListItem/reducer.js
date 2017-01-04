@@ -10,7 +10,9 @@ export default (state=initialState, action) => {
         ...state,
         thingsToCompare: state.thingsToCompare.concat({
           attraction: action.attraction,
-          place: action.place}
+          place: action.place,
+          additional: action.additional
+          }
         )
       }
     case 'REMOVE_ATTRACTION_AND_PLACE_FROM_COMPARE':

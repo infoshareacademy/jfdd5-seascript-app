@@ -1,17 +1,5 @@
-.the-lowest-price {
-  background-color: gold;
-
-}
-
-.other-price {
-  background-color: #fff;
-}
-
-p {
-  font-size: 16px;
-}
-
 .compare-places {
+  color: deeppink;
   height: 200px;
 }
 
@@ -22,10 +10,7 @@ p {
 
 table {
   width: 100%;
-}
 
-td {
-  vertical-align: top;
 }
 
 .table-header-width {

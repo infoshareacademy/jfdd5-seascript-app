@@ -15,6 +15,8 @@ export default () => (
       <Link to='/form'>
         <Button bsStyle="primary" bsSize="large">Form</Button>
       </Link> and follow the arrows</h3>
+
+
   </div>
 )
 

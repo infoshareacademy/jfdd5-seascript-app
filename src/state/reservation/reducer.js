@@ -1,18 +1,45 @@
-import {MAKE_RESERVATION} from "./actionTypes";
+import {
+  MAKE_RESERVATION,
+  FETCH_USER_RESERVATIONS__BEGIN,
+  FETCH_USER_RESERVATIONS__SUCCESS,
+  FETCH_USER_RESERVATIONS__FAILURE,
+  ADD_USER_RESERVATIONS__BEGIN,
+  ADD_USER_RESERVATIONS__FAILURE,
+  ADD_USER_RESERVATIONS__SUCCESS,
+  REMOVE_USER_RESERVATIONS__BEGIN,
+  REMOVE_USER_RESERVATIONS__FAILURE,
+  REMOVE_USER_RESERVATIONS__SUCCESS
+} from "./actionTypes";
 
 
 const initialState = {
-  reservations: [],
+  reservations: []
 }
 
-export default ( state = initialState, action ) => {
+export default (state = initialState, action) => {
   switch (action.type) {
-    case MAKE_RESERVATION:
+    case FETCH_USER_RESERVATIONS__SUCCESS:
       return {
         ...state,
-        reservations: state.reservations.concat(action.formState),
-
+        reservations: action.reservation
       }
-    default: return state
+    case FETCH_USER_RESERVATIONS__FAILURE:
+      return {
+        ...state,
+        reservations: []
+      }
+    case ADD_USER_RESERVATIONS__SUCCESS:
+      return {
+        ...state,
+        reservations: state.reservations.concat(action.reservation)
+      }
+    case REMOVE_USER_RESERVATIONS__SUCCESS:
+      return {
+        reservations: state.reservations.filter(
+          favorite =>
+          favorite.id !== action.reservation)
+      }
+    default:
+      return state
   }
 }

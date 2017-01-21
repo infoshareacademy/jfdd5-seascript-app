@@ -55,7 +55,7 @@ class Form extends React.Component {
 
 
             </Row>
-            <Link to="place-list">
+            <Link to="/place-list">
               <Button type="submit" bsStyle="primary" bsSize="large" block className="Form-button">Submit</Button>
             </Link>
           </ListGroup>

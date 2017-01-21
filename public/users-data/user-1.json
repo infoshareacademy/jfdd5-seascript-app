@@ -1,0 +1,46 @@
+{
+  "id": 1,
+  "name": "Karolina",
+  "password": "weather",
+  "favorites": [
+    {
+      "additional": {
+        "id": 1,
+        "placeId": 1,
+        "attractionId": 1,
+        "price": 100,
+        "title": "xxx",
+        "content": "Najlepsze",
+        "availability": "May-Sept",
+        "children": true,
+        "ranking": 1,
+        "opinion": "“Not worth recommending“",
+        "companyName": "Splash",
+        "companyPhoto": "splash.jpg",
+        "companyWebsite": "www.splash.com"
+      },
+      "attraction": {
+        "id": 1,
+        "name": "Sailing",
+        "price": 300,
+        "image": "sailing.svg"
+      },
+      "place": {
+        "id": 1,
+        "name": "Hel",
+        "attractions": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          9,
+          11
+        ],
+        "factor": 1.5,
+        "latitude": 54.6,
+        "longitude": 18.8
+      }
+    }
+  ]
+}

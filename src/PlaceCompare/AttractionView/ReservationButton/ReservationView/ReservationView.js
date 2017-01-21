@@ -1,14 +1,15 @@
 import React from "react";
 import {connect} from "react-redux";
 import {Button, Form, FormGroup, ControlLabel, FormControl, Col, Checkbox} from "react-bootstrap";
-
+import {addReservations} from '../../../../state/reservation/addToReservations'
 
 const mapStateToProps = state => ({
  thingsToCompare: state.attractionAndPlaceData,
+  session: state.logInStatusData.session
 })
 
 const mapDispatchToProps = dispatch => ({
-  makeReservation: (formState) => dispatch({type: 'reservation/MAKE_RESERVATION', formState: formState})
+  addReservations: (userId, token, reservation) => dispatch(addReservations(userId, token, reservation))
 })
 
 
@@ -32,7 +33,7 @@ class ReservationView extends React.Component {
     <Form horizontal onSubmit={(event) => {
       event.preventDefault()
       this.setState({ didSubmit: true })
-      this.props.makeReservation({
+      this.props.addReservations(this.props.session.userId, this.props.session.id, {
         ...this.state,
         place: this.props.place,
         attractionName: this.props.attractionName,
